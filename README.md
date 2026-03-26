@@ -1,15 +1,32 @@
-# IsoBrowse WASM Modules 🚀
+# IsoBrowse WASM Modules
 
-IsoBrowse Modules are blazingly fast, standalone terminal tools written entirely in Rust and compiled to WebAssembly (WASI). Rooted in the **Unix Philosophy**, these 79 micro-tools are designed to do one thing perfectly and can be chained together using pipes (`|`) to build powerful data processing workflows.
+This repository contains standalone WebAssembly (WASI) modules used by IsoBrowse.
 
-## ⚙️ How It Works
+Each module is a single-purpose CLI-style tool compiled to WASM, designed to be executed in a secure sandbox and chained via pipelines. These modules are designed to run inside the IsoBrowse runtime:
 
-Invoke modules using `/run <module_name>`. Chain them together to process data seamlessly:
-> /echo "Hello World" | /run lowercase | /run slugify
+👉 https://github.com/your-repo/isobrowse
+
+## 🧪 Running a Module Manually
+
+**Using wasmtime:**
+> wasmtime lowercase.wasm -- "HELLO WORLD"
+
+**Using IsoBrowse:**
+> /echo "HELLO" | /run lowercase
+
+## 🧠 Design Philosophy
+
+- Do one thing well
+- Zero dependencies
+- Deterministic output
+- Stream-first processing (stdin → stdout)
+- Sandbox-first execution
+
+IsoModules aims to become a portable, sandboxed alternative to classic Unix core utilities.
 
 ---
 
-## 🧰 The Complete Module Catalog (79 Tools)
+## 🧰 Catalog
 
 ### 📄 1. Text & String Manipulation
 * **`awk`**: Micro column formatter for text data.
@@ -142,11 +159,11 @@ Invoke modules using `/run <module_name>`. Chain them together to process data s
   `> /cat file.md | /run md2html`
 
 ### 🔐 6. Security, Hashing & Encoding
-* **`base58`**: Encodes/decodes data using Base58 (Bitcoin standard).
+* **`base58`**: Encodes/decodes data using Base58.
   `> /echo "secret" | /run base58`
 * **`base64`**: Encodes/decodes data using Base64 format.
   `> /echo "secret" | /run base64`
-* **`bcrypt`**: Securely hashes passwords using the bcrypt algorithm.
+* **`bcrypt`**: Hashes passwords using the bcrypt algorithm.
   `> /echo "mypassword" | /run bcrypt`
 * **`hex`**: Encodes/decodes text to hexadecimal format.
   `> /echo "data" | /run hex`
@@ -154,11 +171,11 @@ Invoke modules using `/run <module_name>`. Chain them together to process data s
   `> /echo "eyJhb..." | /run jwt`
 * **`md5`**: Generates an MD5 hash of the input text.
   `> /echo "data" | /run md5`
-* **`random`**: Generates a cryptographically secure random string.
+* **`random`**: Generates a secure random string.
   `> /run random 16`
 * **`sha256`**: Generates a secure SHA-256 hash of the input text.
   `> /echo "data" | /run sha256`
-* **`uuid`**: Generates a random, universally unique identifier (UUID v4).
+* **`uuid`**: Generates a universally unique identifier (UUID v4).
   `> /run uuid`
 
 ### 🛠 7. Math, Analytics & Developer Debug
