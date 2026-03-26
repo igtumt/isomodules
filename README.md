@@ -4,12 +4,9 @@ This repository contains standalone WebAssembly (WASI) modules used by IsoBrowse
 
 Each module is a single-purpose CLI-style tool compiled to WASM, designed to be executed in a secure sandbox and chained via pipelines. These modules are designed to run inside the IsoBrowse runtime:
 
-👉 https://github.com/igtumt/isobrowse
+👉 https://github.com/yigtumt/isobrowse
 
-## 🧪 Running a Module Manually
-
-**Using wasmtime:**
-> wasmtime lowercase.wasm -- "HELLO WORLD"
+## 🧪 Running a Module
 
 **Using IsoBrowse:**
 > /echo "HELLO" | /run lowercase
@@ -18,11 +15,10 @@ Each module is a single-purpose CLI-style tool compiled to WASM, designed to be 
 
 - Do one thing well
 - Zero dependencies
-- Deterministic output
 - Stream-first processing (stdin → stdout)
 - Sandbox-first execution
 
-IsoModules aims to become a portable, sandboxed alternative to classic Unix core utilities.
+IsoModules aims to become a portable.
 
 ---
 
