@@ -81,7 +81,7 @@ Below are some commonly used ones:
 
 ---
 
-## 📦 Full Tool List (80+)
+## 📦 Full Tool List (80)
 
 In Isobrowse terminal
 Full list: /catalog
@@ -127,6 +127,7 @@ avg, bytecount, entropy, hexdump, histogram, lorem, math, minmax, stats, timesta
 * All tools operate on streamed input
 * No tool has access to your local system
 * Tools can be chained freely using pipelines
+* No dependencies
 
 ---
 
