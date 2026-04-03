@@ -20,7 +20,7 @@ They are designed to run in a sandbox and be chained together using pipelines.
 ```
 
 ```bash
-/get https://api.example.com | /run jq "name"
+/get https://httpbin.org/json | /run jq "slideshow.title""
 ```
 
 ---
@@ -61,8 +61,8 @@ Below are some commonly used ones:
 ### 📊 JSON
 
 ```bash
-/get api.example.com | /run jq "name"
-/cat data.json | /run jsonfmt
+/get https://jsonplaceholder.typicode.com/users | /run jq "0.name"
+/echo "{\"a\":1}" | /run jsonfmt
 ```
 
 ### 🌐 Web
