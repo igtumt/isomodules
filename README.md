@@ -37,10 +37,10 @@ Run any module inside IsoBrowse:
 
 ## 🧠 Design Philosophy
 
-* Do one thing well
 * Zero dependencies
 * Stream-first processing (`stdin → stdout`)
-* Sandbox-first execution
+* Sandbox-first and Local execution
+* Do one thing well
 
 ---
 
@@ -54,7 +54,7 @@ Below are some commonly used ones:
 
 ```bash
 /echo "hello" | /run uppercase
-/cat log.txt | /run grep "ERROR"
+//read ~/Desktop/server.log | /run grep "ERROR"
 /echo "a,b,c" | /run cut -d ',' -f 2
 ```
 
