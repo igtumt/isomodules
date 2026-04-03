@@ -54,7 +54,7 @@ Below are some commonly used ones:
 
 ```bash
 /echo "hello" | /run uppercase
-//read ~/Desktop/server.log | /run grep "ERROR"
+/read ~/Desktop/test/server.log | /run grep "ERROR"
 /echo "a,b,c" | /run cut -d ',' -f 2
 ```
 
