@@ -1,15 +1,9 @@
 [
   {
-    "name": "grep",
-    "category": "TEXT",
-    "desc": "Filters standard input based on a given regex pattern. (Unix classic)",
-    "tags": "text unix search filter regex"
-  },
-  {
-    "name": "sed",
-    "category": "TEXT",
-    "desc": "Find and replace text using regular expressions.",
-    "tags": "text replace regex stream"
+    "name": "avg",
+    "category": "STATS",
+    "desc": "Calculates the mathematical average of a list of numbers.",
+    "tags": "math average mean stats"
   },
   {
     "name": "awk",
@@ -18,34 +12,70 @@
     "tags": "text extract column parse"
   },
   {
-    "name": "sort",
-    "category": "TEXT",
-    "desc": "Sorts lines of text files or standard input.",
-    "tags": "text sort order numeric"
+    "name": "base58",
+    "category": "CRYPTO",
+    "desc": "Encodes or decodes data using Base58 (commonly used in blockchain).",
+    "tags": "crypto encode decode blockchain"
   },
   {
-    "name": "uniq",
-    "category": "TEXT",
-    "desc": "Reports or omits repeated lines in text.",
-    "tags": "text unique duplicate remove"
+    "name": "base64",
+    "category": "CRYPTO",
+    "desc": "Encodes or decodes data using the Base64 algorithm.",
+    "tags": "crypto encode decode security"
   },
   {
-    "name": "wc",
-    "category": "TEXT",
-    "desc": "Counts lines, words, and characters in the input.",
-    "tags": "text count lines words"
+    "name": "bcrypt",
+    "category": "CRYPTO",
+    "desc": "Hashes passwords securely using the bcrypt algorithm.",
+    "tags": "crypto hash password bcrypt"
   },
   {
-    "name": "head",
+    "name": "bytecount",
     "category": "TEXT",
-    "desc": "Outputs the first part (e.g., 10 lines) of files or piped data.",
-    "tags": "text top lines preview"
+    "desc": "Counts the exact number of bytes in the input data.",
+    "tags": "text count bytes size"
   },
   {
-    "name": "tail",
+    "name": "camelcase",
     "category": "TEXT",
-    "desc": "Outputs the last part of files or piped data.",
-    "tags": "text bottom lines end log"
+    "desc": "Converts input text to camelCase formatting.",
+    "tags": "text format case camelcase"
+  },
+  {
+    "name": "cssminify",
+    "category": "WEB",
+    "desc": "Minifies CSS stylesheets by removing unnecessary whitespace.",
+    "tags": "css minify web optimize"
+  },
+  {
+    "name": "csv2json",
+    "category": "DATA",
+    "desc": "Converts CSV table data into a JSON array.",
+    "tags": "csv json convert table"
+  },
+  {
+    "name": "csvfilter",
+    "category": "DATA",
+    "desc": "Filters rows from CSV data based on specific conditions.",
+    "tags": "csv filter query data"
+  },
+  {
+    "name": "csvselect",
+    "category": "DATA",
+    "desc": "Selects and extracts specific columns from CSV data.",
+    "tags": "csv extract column data"
+  },
+  {
+    "name": "csvsort",
+    "category": "DATA",
+    "desc": "Sorts CSV rows based on the values of a specific column.",
+    "tags": "csv sort order data"
+  },
+  {
+    "name": "csvstats",
+    "category": "STATS",
+    "desc": "Generates basic statistics and summaries for CSV data.",
+    "tags": "csv statistics data summary"
   },
   {
     "name": "cut",
@@ -60,184 +90,10 @@
     "tags": "text compare changes patch"
   },
   {
-    "name": "jq",
-    "category": "DATA",
-    "desc": "Command-line JSON processor. Extracts specific data from JSON.",
-    "tags": "json parse extract query"
-  },
-  {
-    "name": "jsonfmt",
-    "category": "DATA",
-    "desc": "Formats, beautifies, or minifies JSON data for readability.",
-    "tags": "json format pretty minify"
-  },
-  {
-    "name": "jsondiff",
-    "category": "DATA",
-    "desc": "Finds and displays differences between two JSON objects.",
-    "tags": "json compare diff changes"
-  },
-  {
-    "name": "yaml2json",
-    "category": "DATA",
-    "desc": "Converts YAML configuration files to JSON.",
-    "tags": "yaml json convert config"
-  },
-  {
-    "name": "json2yaml",
-    "category": "DATA",
-    "desc": "Converts JSON data into YAML format.",
-    "tags": "json yaml convert config"
-  },
-  {
-    "name": "csv2json",
-    "category": "DATA",
-    "desc": "Converts CSV table data into a JSON array.",
-    "tags": "csv json convert table"
-  },
-  {
-    "name": "json2csv",
-    "category": "DATA",
-    "desc": "Converts JSON array data into CSV format for Excel.",
-    "tags": "json csv convert excel"
-  },
-  {
-    "name": "xml2json",
-    "category": "DATA",
-    "desc": "Converts legacy XML data into modern JSON format.",
-    "tags": "xml json convert"
-  },
-  {
-    "name": "csvstats",
+    "name": "entropy",
     "category": "STATS",
-    "desc": "Generates basic statistics and summaries for CSV data.",
-    "tags": "csv statistics data summary"
-  },
-  {
-    "name": "csvcut",
-    "category": "STATS",
-    "desc": "Filters and extracts specific columns from CSV files.",
-    "tags": "csv column filter extract"
-  },
-  {
-    "name": "csvsql",
-    "category": "STATS",
-    "desc": "Executes SQL queries directly on raw CSV data streams.",
-    "tags": "csv sql query database"
-  },
-  {
-    "name": "math",
-    "category": "STATS",
-    "desc": "Evaluates mathematical expressions passed via standard input.",
-    "tags": "math calculate expression calculator"
-  },
-  {
-    "name": "stats",
-    "category": "STATS",
-    "desc": "Calculates mean, median, and sum for a list of numbers.",
-    "tags": "math statistics average sum"
-  },
-  {
-    "name": "base64",
-    "category": "CRYPTO",
-    "desc": "Encodes or decodes data using the Base64 algorithm.",
-    "tags": "crypto encode decode security"
-  },
-  {
-    "name": "jwt",
-    "category": "CRYPTO",
-    "desc": "Decodes and inspects JSON Web Tokens (JWT) safely offline.",
-    "tags": "crypto jwt token auth decode"
-  },
-  {
-    "name": "urlencode",
-    "category": "CRYPTO",
-    "desc": "Encodes or decodes URL components (e.g. replacing spaces with %20).",
-    "tags": "web encode decode url"
-  },
-  {
-    "name": "sha256",
-    "category": "CRYPTO",
-    "desc": "Generates a secure SHA-256 cryptographic hash.",
-    "tags": "crypto hash sha256 security"
-  },
-  {
-    "name": "md5",
-    "category": "CRYPTO",
-    "desc": "Generates a classic MD5 hash for given input.",
-    "tags": "crypto hash md5"
-  },
-  {
-    "name": "bcrypt",
-    "category": "CRYPTO",
-    "desc": "Hashes passwords securely using the bcrypt algorithm.",
-    "tags": "crypto hash password bcrypt"
-  },
-  {
-    "name": "uuid",
-    "category": "CRYPTO",
-    "desc": "Generates random, unique V4 UUID strings.",
-    "tags": "crypto uuid generate random id"
-  },
-  {
-    "name": "hex",
-    "category": "CRYPTO",
-    "desc": "Converts text to Hexadecimal machine code, or Hex to text.",
-    "tags": "crypto hex encode decode"
-  },
-  {
-    "name": "html2text",
-    "category": "WEB",
-    "desc": "Strips all HTML tags and returns clean, readable text.",
-    "tags": "html text strip clean web"
-  },
-  {
-    "name": "domquery",
-    "category": "WEB",
-    "desc": "Extracts specific elements from HTML using CSS selectors.",
-    "tags": "html dom query selector extract"
-  },
-  {
-    "name": "linkextract",
-    "category": "WEB",
-    "desc": "Finds and lists all outbound URLs (<a href>) from an HTML page.",
-    "tags": "html links extract scrape"
-  },
-  {
-    "name": "md2html",
-    "category": "WEB",
-    "desc": "Converts Markdown text into clean HTML code.",
-    "tags": "markdown html convert render web"
-  },
-  {
-    "name": "urlparse",
-    "category": "WEB",
-    "desc": "Parses complex URLs into JSON containing domain, path, and queries.",
-    "tags": "url parse web json"
-  },
-  {
-    "name": "cssminify",
-    "category": "WEB",
-    "desc": "Minifies CSS stylesheets by removing unnecessary whitespace.",
-    "tags": "css minify web optimize"
-  },
-  {
-    "name": "timestamp",
-    "category": "DEV",
-    "desc": "Converts Unix epoch timestamps to human-readable dates.",
-    "tags": "time date unix epoch dev"
-  },
-  {
-    "name": "regex",
-    "category": "DEV",
-    "desc": "Extracts IPs, emails, or custom regex patterns from text.",
-    "tags": "text regex extract match"
-  },
-  {
-    "name": "cron",
-    "category": "DEV",
-    "desc": "Translates cron schedule expressions into readable English.",
-    "tags": "cron schedule time dev"
+    "desc": "Calculates the Shannon entropy of the input data.",
+    "tags": "math stats entropy randomness"
   },
   {
     "name": "env2json",
@@ -246,22 +102,220 @@
     "tags": "env json config parse dev"
   },
   {
-    "name": "random",
-    "category": "DEV",
-    "desc": "Generates random strings, passwords, or numbers for testing.",
-    "tags": "random generate password dev"
+    "name": "expand",
+    "category": "TEXT",
+    "desc": "Converts tab characters to spaces in the input text.",
+    "tags": "text format tabs spaces"
   },
   {
-    "name": "lorem",
-    "category": "DEV",
-    "desc": "Generates 'Lorem Ipsum' placeholder text for UI testing.",
-    "tags": "text lorem ipsum placeholder generate"
+    "name": "grep",
+    "category": "TEXT",
+    "desc": "Filters standard input based on a given regex pattern.",
+    "tags": "text unix search filter regex"
+  },
+  {
+    "name": "head",
+    "category": "TEXT",
+    "desc": "Outputs the first part of files or piped data.",
+    "tags": "text top lines preview"
+  },
+  {
+    "name": "hex",
+    "category": "CRYPTO",
+    "desc": "Converts text to Hexadecimal, or Hex to text.",
+    "tags": "crypto hex encode decode"
   },
   {
     "name": "hexdump",
     "category": "DEV",
     "desc": "Creates a hexadecimal view of any binary or text input.",
-    "tags": "hex binary dump system reverse"
+    "tags": "hex binary dump system"
+  },
+  {
+    "name": "histogram",
+    "category": "STATS",
+    "desc": "Generates a text-based histogram from a list of numbers.",
+    "tags": "math chart graph statistics"
+  },
+  {
+    "name": "html2text",
+    "category": "WEB",
+    "desc": "Strips HTML tags and returns clean text.",
+    "tags": "html text strip clean web"
+  },
+  {
+    "name": "htmlclean",
+    "category": "WEB",
+    "desc": "Cleans and formats messy HTML code.",
+    "tags": "html clean format web"
+  },
+  {
+    "name": "htmltitle",
+    "category": "WEB",
+    "desc": "Extracts the content of the <title> tag from an HTML document.",
+    "tags": "html title extract web seo"
+  },
+  {
+    "name": "jq",
+    "category": "DATA",
+    "desc": "Command-line JSON processor. Extracts specific data from JSON.",
+    "tags": "json parse extract query"
+  },
+  {
+    "name": "json2csv",
+    "category": "DATA",
+    "desc": "Converts JSON array data into CSV format.",
+    "tags": "json csv convert excel"
+  },
+  {
+    "name": "json2yaml",
+    "category": "DATA",
+    "desc": "Converts JSON data into YAML format.",
+    "tags": "json yaml convert config"
+  },
+  {
+    "name": "jsondiff",
+    "category": "DATA",
+    "desc": "Finds and displays differences between two JSON objects.",
+    "tags": "json compare diff changes"
+  },
+  {
+    "name": "jsonfilter",
+    "category": "DATA",
+    "desc": "Filters JSON arrays based on key/value conditions.",
+    "tags": "json filter query extract"
+  },
+  {
+    "name": "jsonfmt",
+    "category": "DATA",
+    "desc": "Formats, beautifies, or minifies JSON data.",
+    "tags": "json format pretty minify"
+  },
+  {
+    "name": "jsonkeys",
+    "category": "DATA",
+    "desc": "Extracts and lists all top-level keys from a JSON object.",
+    "tags": "json keys extract parse"
+  },
+  {
+    "name": "jsonmerge",
+    "category": "DATA",
+    "desc": "Merges multiple JSON objects into a single object.",
+    "tags": "json merge combine data"
+  },
+  {
+    "name": "jsonpath",
+    "category": "DATA",
+    "desc": "Executes advanced JSONPath queries on JSON data.",
+    "tags": "json query path extract"
+  },
+  {
+    "name": "jwt",
+    "category": "CRYPTO",
+    "desc": "Decodes and inspects JSON Web Tokens (JWT) safely.",
+    "tags": "crypto jwt token auth decode"
+  },
+  {
+    "name": "kebabcase",
+    "category": "TEXT",
+    "desc": "Converts text to kebab-case format.",
+    "tags": "text format case kebabcase"
+  },
+  {
+    "name": "linediff",
+    "category": "TEXT",
+    "desc": "Outputs a simple line-by-line comparison of two text inputs.",
+    "tags": "text compare diff lines"
+  },
+  {
+    "name": "linkdomain",
+    "category": "WEB",
+    "desc": "Extracts domain names from a list of URLs.",
+    "tags": "url domain extract web"
+  },
+  {
+    "name": "linkextract",
+    "category": "WEB",
+    "desc": "Finds and lists all outbound URLs from an HTML page.",
+    "tags": "html links extract scrape"
+  },
+  {
+    "name": "lorem",
+    "category": "DEV",
+    "desc": "Generates 'Lorem Ipsum' placeholder text.",
+    "tags": "text lorem placeholder generate"
+  },
+  {
+    "name": "lowercase",
+    "category": "TEXT",
+    "desc": "Converts all standard input text to lowercase.",
+    "tags": "text lower case string"
+  },
+  {
+    "name": "math",
+    "category": "STATS",
+    "desc": "Evaluates mathematical expressions passed via standard input.",
+    "tags": "math calculate expression"
+  },
+  {
+    "name": "md_links",
+    "category": "WEB",
+    "desc": "Extracts all markdown links [text](url) from a Markdown file.",
+    "tags": "markdown links extract parse"
+  },
+  {
+    "name": "md_strip",
+    "category": "WEB",
+    "desc": "Strips Markdown formatting and returns plain text.",
+    "tags": "markdown text strip clean"
+  },
+  {
+    "name": "md_toc",
+    "category": "WEB",
+    "desc": "Generates a Table of Contents from Markdown headings.",
+    "tags": "markdown toc headings structure"
+  },
+  {
+    "name": "md2html",
+    "category": "WEB",
+    "desc": "Converts Markdown text into HTML code.",
+    "tags": "markdown html convert render"
+  },
+  {
+    "name": "md5",
+    "category": "CRYPTO",
+    "desc": "Generates an MD5 hash for given input.",
+    "tags": "crypto hash md5"
+  },
+  {
+    "name": "metatags",
+    "category": "WEB",
+    "desc": "Extracts SEO meta tags from an HTML document.",
+    "tags": "html meta seo extract web"
+  },
+  {
+    "name": "minmax",
+    "category": "STATS",
+    "desc": "Finds the minimum and maximum values in a list of numbers.",
+    "tags": "math statistics min max"
+  },
+  {
+    "name": "nl",
+    "category": "TEXT",
+    "desc": "Numbers lines of files or piped data.",
+    "tags": "text lines numbering format"
+  },
+  {
+    "name": "patch",
+    "category": "TEXT",
+    "desc": "Applies a diff file to an original text.",
+    "tags": "text diff apply update"
+  },
+  {
+    "name": "php-slim",
+    "category": "ENGINE",
+    "desc": "Official PHP WebAssembly runtime (Slim version).",
+    "tags": "php engine script execute"
   },
   {
     "name": "python",
@@ -270,39 +324,171 @@
     "tags": "python engine script execute"
   },
   {
+    "name": "queryparam",
+    "category": "WEB",
+    "desc": "Extracts specific query parameters from URLs.",
+    "tags": "url query param extract web"
+  },
+  {
+    "name": "random",
+    "category": "DEV",
+    "desc": "Generates random strings, passwords, or numbers.",
+    "tags": "random generate password dev"
+  },
+  {
+    "name": "regex",
+    "category": "DEV",
+    "desc": "Extracts matching custom regex patterns from text.",
+    "tags": "text regex extract match"
+  },
+  {
+    "name": "rev",
+    "category": "TEXT",
+    "desc": "Reverses lines characterwise.",
+    "tags": "text reverse string"
+  },
+  {
+    "name": "rot13",
+    "category": "CRYPTO",
+    "desc": "Applies the ROT13 substitution cipher to text.",
+    "tags": "crypto cipher rot13 text"
+  },
+  {
     "name": "ruby-slim",
     "category": "ENGINE",
     "desc": "Official Ruby WebAssembly runtime (Slim version).",
     "tags": "ruby engine script execute"
   },
   {
-    "name": "php-slim",
-    "category": "ENGINE",
-    "desc": "Official PHP WebAssembly runtime (Slim version).",
-    "tags": "php engine script execute"
-  },
-    {
-    "name": "lowercase",
+    "name": "sed",
     "category": "TEXT",
-    "desc": "Converts all standard input text to lowercase letters.",
-    "tags": "text lower case string format"
+    "desc": "Find and replace text using regular expressions.",
+    "tags": "text replace regex stream"
   },
   {
-    "name": "uppercase",
+    "name": "sha256",
+    "category": "CRYPTO",
+    "desc": "Generates a secure SHA-256 cryptographic hash.",
+    "tags": "crypto hash sha256 security"
+  },
+  {
+    "name": "shuffle",
     "category": "TEXT",
-    "desc": "Converts all standard input text to uppercase letters.",
-    "tags": "text upper case string format"
+    "desc": "Randomizes the order of lines in a text.",
+    "tags": "text random shuffle lines"
   },
   {
     "name": "slugify",
     "category": "WEB",
-    "desc": "Converts strings into URL-friendly slugs (e.g., 'Hello World' -> 'hello-world').",
+    "desc": "Converts strings into URL-friendly slugs.",
     "tags": "web url slug format seo"
+  },
+  {
+    "name": "snakecase",
+    "category": "TEXT",
+    "desc": "Converts text to snake_case format.",
+    "tags": "text format case snakecase"
+  },
+  {
+    "name": "sort",
+    "category": "TEXT",
+    "desc": "Sorts lines of text files or standard input.",
+    "tags": "text sort order numeric"
+  },
+  {
+    "name": "stats",
+    "category": "STATS",
+    "desc": "Calculates basic statistics for a list of numbers.",
+    "tags": "math statistics average sum"
+  },
+  {
+    "name": "stripansi",
+    "category": "TEXT",
+    "desc": "Removes ANSI color and formatting codes from terminal output.",
+    "tags": "text format terminal clean"
+  },
+  {
+    "name": "tableextract",
+    "category": "WEB",
+    "desc": "Extracts HTML <table> elements into CSV format.",
+    "tags": "html table extract csv web"
+  },
+  {
+    "name": "tac",
+    "category": "TEXT",
+    "desc": "Concatenates and prints files in reverse line order.",
+    "tags": "text reverse lines cat"
+  },
+  {
+    "name": "tail",
+    "category": "TEXT",
+    "desc": "Outputs the last part of files or piped data.",
+    "tags": "text bottom lines end log"
+  },
+  {
+    "name": "timestamp",
+    "category": "DEV",
+    "desc": "Converts Unix epoch timestamps to human-readable dates.",
+    "tags": "time date unix epoch dev"
+  },
+  {
+    "name": "trim",
+    "category": "TEXT",
+    "desc": "Removes leading and trailing whitespace from lines.",
+    "tags": "text format clean whitespace"
+  },
+  {
+    "name": "uniq",
+    "category": "TEXT",
+    "desc": "Reports or omits repeated lines in text.",
+    "tags": "text unique duplicate remove"
+  },
+  {
+    "name": "uppercase",
+    "category": "TEXT",
+    "desc": "Converts all standard input text to uppercase.",
+    "tags": "text upper case string"
+  },
+  {
+    "name": "urlencode",
+    "category": "WEB",
+    "desc": "Encodes or decodes URL components.",
+    "tags": "web encode decode url"
+  },
+  {
+    "name": "urlparse",
+    "category": "WEB",
+    "desc": "Parses complex URLs into JSON.",
+    "tags": "url parse web json"
+  },
+  {
+    "name": "uuid",
+    "category": "CRYPTO",
+    "desc": "Generates random, unique V4 UUID strings.",
+    "tags": "crypto uuid generate random id"
+  },
+  {
+    "name": "validatejson",
+    "category": "DATA",
+    "desc": "Checks if the provided string is valid JSON.",
+    "tags": "json validate check error"
+  },
+  {
+    "name": "wc",
+    "category": "TEXT",
+    "desc": "Counts lines, words, and characters in the input.",
+    "tags": "text count lines words"
   },
   {
     "name": "wordwrap",
     "category": "TEXT",
-    "desc": "Wraps long lines of text to fit within a specific column width.",
-    "tags": "text wrap format lines readable"
+    "desc": "Wraps long lines of text to fit within a specific width.",
+    "tags": "text wrap format lines"
+  },
+  {
+    "name": "yaml2json",
+    "category": "DATA",
+    "desc": "Converts YAML configuration files to JSON.",
+    "tags": "yaml json convert config"
   }
 ]
