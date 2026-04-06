@@ -1,9 +1,6 @@
 # 🧰 IsoModules Live Catalog & Examples
 
-Welcome to the official IsoBrowse module catalog. 
-You can copy and paste any of the examples below directly 
-into your IsoBrowse terminal to see them in action instantly. 
-No local files required.
+Welcome to the official IsoBrowse module catalog. You can copy and paste any of the examples below directly into your IsoBrowse terminal to see them in action instantly. No local files required.
 
 ### 📄 1. Text & String Manipulation
 
@@ -156,37 +153,37 @@ No local files required.
 
 * **`jq`**: Extracts specific keys or values from a JSON object.
   * `/get https://jsonplaceholder.typicode.com/todos/1 | /run jq "title"`
-  * `/echo "{\"status\":200,\"data\":{\"user\":\"admin\",\"token\":\"xyz\"}}" | /run jq "data.token"`
-  * `/echo "{\"password\":\"secret_pass\"}" | /run jq "password" | /run base64`
+  * `/echo '{"status":200,"data":{"user":"admin","token":"xyz"}}' | /run jq "data.token"`
+  * `/echo '{"password":"secret_pass"}' | /run jq "password" | /run base64`
 
 * **`json2csv`**: Converts a JSON array of objects into a CSV format.
-  * `/echo "[{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}]" | /run json2csv`
+  * `/echo '[{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]' | /run json2csv`
 
 * **`json2yaml`**: Converts JSON objects into human-readable YAML.
-  * `/echo "{\"gitlab_ci\": {\"image\": \"rust:latest\", \"script\": [\"cargo build\", \"cargo test\"]}}" | /run json2yaml`
+  * `/echo '{"gitlab_ci": {"image": "rust:latest", "script": ["cargo build", "cargo test"]}}' | /run json2yaml`
 
 * **`jsondiff`**: Structural comparison between two JSON objects in an array.
-  * `/echo "[{\"a\":1}, {\"a\":2}]" | /run jsondiff`
+  * `/echo '[{"a":1}, {"a":2}]' | /run jsondiff`
 
 * **`jsonfilter`**: Filters a JSON array based on a key-value condition.
-  * `/echo "[{\"name\": \"John\", \"role\": \"admin\"}, {\"name\": \"Jane\", \"role\": \"user\"}]" | /run jsonfilter "role" "admin"`
+  * `/echo '[{"name": "John", "role": "admin"}, {"name": "Jane", "role": "user"}]' | /run jsonfilter "role" "admin"`
 
 * **`jsonfmt`**: Pretty-prints and formats minified JSON data.
-  * `/echo "{\"a\":1, \"b\": [1,2,3]}" | /run jsonfmt`
-  * `/echo "{\"name\":   \"IsoBrowse\",    \"fast\":  true}" | /run jsonfmt`
+  * `/echo '{"a":1, "b": [1,2,3]}' | /run jsonfmt`
+  * `/echo '{"name":   "IsoBrowse",    "fast":  true}' | /run jsonfmt`
 
 * **`jsonkeys`**: Lists all top-level keys in a JSON object.
-  * `/echo "{\"name\": \"IsoBrowse\", \"version\": \"1.0\", \"fast\": true}" | /run jsonkeys`
+  * `/echo '{"name": "IsoBrowse", "version": "1.0", "fast": true}' | /run jsonkeys`
 
 * **`jsonmerge`**: Merges an array of JSON objects into a single object.
-  * `/echo "[{\"a\":1}, {\"b\":2}]" | /run jsonmerge`
+  * `/echo '[{"a":1}, {"b":2}]' | /run jsonmerge`
 
 * **`jsonpath`**: Deep querying tool for JSON using JSONPath syntax.
-  * `/echo "{\"users\": [{\"name\": \"Alice\", \"email\": \"alice@mail.com\"}, {\"name\": \"Eve\", \"email\": \"eve@mail.com\"}]}" | /run jsonpath "$.users[0].email"`
-  * `/echo "{\"config\": {\"database\": {\"host\": \"localhost\", \"port\": 5432}}}" | /run jsonpath "$.config.database.port"`
+  * `/echo '{"users": [{"name": "Alice", "email": "alice@mail.com"}, {"name": "Eve", "email": "eve@mail.com"}]}' | /run jsonpath "$.users[0].email"`
+  * `/echo '{"config": {"database": {"host": "localhost", "port": 5432}}}' | /run jsonpath "$.config.database.port"`
 
 * **`validatejson`**: Strictly checks if the input is a valid JSON string.
-  * `/echo "{\"valid\": true}" | /run validatejson`
+  * `/echo '{"valid": true}' | /run validatejson`
 
 * **`yaml2json`**: Converts YAML configurations into JSON.
   * `/echo "version: '3'\nservices:\n  web:\n    image: nginx:latest" | /run yaml2json`
