@@ -20,7 +20,7 @@ They are designed to run in a sandbox and be chained together using pipelines.
 ```
 
 ```bash
-/get https://httpbin.org/json | /run jq "slideshow.title""
+/get https://httpbin.org/json | /run jq "slideshow.title"
 ```
 
 ---
