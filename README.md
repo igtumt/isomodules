@@ -48,6 +48,8 @@ Run any module inside IsoBrowse:
 
 IsoBrowse includes ~80 WASM tools for text processing, data parsing, web scraping, encoding, and more.
 
+For more detail examples check wasm-tool-examples.txt
+
 Below are some commonly used ones:
 
 ### 📄 Text
@@ -96,7 +98,7 @@ awk, camelcase, cut, expand, grep, kebabcase, lowercase, nl, regex, rev, rot13, 
 
 ### 📂 File & Log
 
-diff, head, linediff, patch, tail, wc
+diff, head, linediff, tail, wc
 
 ### 📊 Data (JSON / CSV / YAML)
 
