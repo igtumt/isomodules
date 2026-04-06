@@ -1,0 +1,328 @@
+# 🧰 IsoModules Live Catalog & Examples
+
+Welcome to the official IsoBrowse module catalog. You can copy and paste any of the examples below directly into your IsoBrowse terminal to see them in action instantly. No local files required.
+
+### 📄 1. Text & String Manipulation
+
+* **`awk`**: Micro column formatter for text data.
+  * `/echo "John 25" | /run awk "Name: $1, Age: $2"`
+  * `/echo "John 25 Admin\nJane 30 User" | /run awk "User: $1, Age: $2, Role: $3"`
+  * `/echo "ERROR 404 Not_Found" | /run awk "Code: $2 - Msg: $3"`
+
+* **`camelcase`**: Converts text to `camelCase`.
+  * `/echo "hello_world" | /run camelcase`
+
+* **`cut`**: Removes sections from each line of input.
+  * `/echo "a,b,c" | /run cut -d "," -f 2`
+  * `/echo "IsoBrowse is a legendary wasm based terminal" | /run cut -d " " -f 4`
+  * `/echo "14:35:59" | /run cut -d ":" -f 2`
+  * `/echo "https://isobrowse.com/api/v1/users" | /run cut -d "/" -f 4`
+  * `/echo "API_KEY=super_secret_token_12345" | /run cut -d "=" -f 2`
+  * `/echo "dev@isobrowse.com" | /run cut -d "@" -f 2`
+
+* **`expand`**: Converts Tabs to standard spaces.
+  * `/echo "Column1\tColumn2\tColumn3" | /run expand`
+
+* **`grep`**: Filters lines matching a specific keyword or pattern.
+  * `/echo "INFO: Boot\nERROR: Crash\nWARN: High CPU" | /run grep "ERROR"`
+  * `/echo "ERROR: Disk full\nINFO: No error\nERROR: CPU high" | /run grep "^ERROR"`
+  * `/echo "user: John\nid: 1453\nrole: admin\ncode: 404" | /run grep "[0-9]+"`
+
+* **`kebabcase`**: Converts text to `kebab-case`.
+  * `/echo "Hello World" | /run kebabcase`
+
+* **`lowercase`**: Converts all text to lowercase.
+  * `/echo "HELLO ISOBROWSE" | /run lowercase`
+
+* **`nl`**: Numbers all lines in the input.
+  * `/run lorem 5 | /run nl`
+  * `/echo "First\nSecond\nThird" | /run nl`
+  * `/echo "Log 1\nERROR: Disk\nLog 3\nERROR: CPU" | /run nl | /run grep "ERROR"`
+
+* **`regex`**: Extracts only the parts of text matching a Regex pattern.
+  * `/echo "Contact: user@isobrowse.com" | /run regex "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"`
+  * `/echo "User connected from 192.168.1.10\nFailed login IP: 10.0.0.5" | /run regex "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"`
+  * `/echo "Server error: [2026-03-31] system crashed." | /run regex "[0-9]{4}-[0-9]{2}-[0-9]{2}"`
+  * `/echo "Total price is $45.99 free shipping." | /run regex "\$[0-9]+\.[0-9]+"`
+  * `/echo "Order 847592 has been shipped." | /run regex "[0-9]+"`
+
+* **`rev`**: Reverses the characters of each line.
+  * `/echo "hello" | /run rev`
+  * `/echo "IsoBrowse" | /run rev`
+  * `/echo "/var/log/nginx/access.log" | /run rev`
+
+* **`rot13`**: Applies the ROT13 substitution cipher to text.
+  * `/echo "secret" | /run rot13`
+  * `/echo "Top Secret: 123 IsoBrowse" | /run rot13`
+  * `/echo "Linux and Rust are Awesome" | /run rot13 | /run rot13`
+
+* **`sed`**: Advanced Regex-based find and replace.
+  * `/echo "apple" | /run sed "a" "o"`
+  * `/echo "My name is John.\nJohn is a developer." | /run sed "John" "Iso"`
+  * `/echo "Attack detected: 192.168.1.5" | /run sed "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" "[REDACTED_IP]"`
+
+* **`shuffle`**: Randomly shuffles the input lines.
+  * `/echo "1\n2\n3\n4\n5" | /run shuffle`
+  * `/echo "Alice\nBob\nCharlie\nDave\nEve" | /run shuffle | /run head 2`
+
+* **`slugify`**: Converts text into a URL-friendly slug.
+  * `/echo "My New Post!" | /run slugify`
+  * `/echo "  My  NEW --- _Post!!! 2026  " | /run slugify`
+  * `/echo "ERROR: Database Connection Lost!" | /run awk "$2 $3 $4" | /run slugify`
+
+* **`snakecase`**: Converts text to `snake_case`.
+  * `/echo "Hello World" | /run snakecase`
+
+* **`sort`**: Sorts lines of text alphabetically or numerically.
+  * `/echo "z\na\nb" | /run sort`
+  * `/echo "Zebra\nApple\nPear\nWalnut" | /run sort`
+  * `/echo "10\n2\n100\n5" | /run sort`
+
+* **`stripansi`**: Removes terminal ANSI color and formatting codes.
+  * `/get https://my-server.com/raw_logs | /run stripansi`
+
+* **`tac`**: Reverses the order of lines (prints last line first).
+  * `/echo "first\nlast" | /run tac`
+  * `/echo "Morning\nNoon\nEvening" | /run tac`
+  * `/run lorem 10 | /run wordwrap 40 | /run tail 3 | /run tac`
+
+* **`trim`**: Trims leading and trailing whitespace from lines.
+  * `/echo "  padded  " | /run trim`
+  * `/echo "   Line 1   \n\tLine 2\n  Line 3 \t" | /run trim`
+  * `/echo "ID :   1453   " | /run awk "Number: $3" | /run trim`
+
+* **`uniq`**: Filters out repeated, adjacent lines.
+  * `/echo "a\na\nb" | /run uniq`
+  * `/echo "Apple\nApple\nPear\nApple" | /run uniq`
+  * `/echo "192.168.1.1\n10.0.0.5\n192.168.1.1\n10.0.0.5" | /run sort | /run uniq`
+
+* **`uppercase`**: Converts all text to UPPERCASE.
+  * `/echo "hello isobrowse" | /run uppercase`
+
+* **`wordwrap`**: Wraps long lines of text to a specified character width.
+  * `/run lorem 50 | /run wordwrap 40`
+  * `/echo "IsoBrowse is a tool combining modern web technologies and the power of Rust." | /run wordwrap 30`
+
+
+### 📂 2. File & Log Utilities
+
+* **`diff`**: Compares two text inputs and shows differences.
+  * `/echo "IsoBrowse v1.0" | /run diff "IsoBrowse v2.0"`
+
+* **`head`**: Outputs the first N lines of the input.
+  * `/run lorem 50 | /run wordwrap 40 | /run head 5`
+  * `/echo "ID,Name,Age\n1,John,30\n2,Jane,25\n3,Bob,40\n4,Alice,22" | /run head 3`
+
+* **`linediff`**: Generates a standard Unified Diff (Patch) between texts.
+  * `/echo "User: admin" | /run linediff "User: root"`
+
+* **`tail`**: Outputs the last N lines of the input.
+  * `/run lorem 50 | /run wordwrap 40 | /run tail 5`
+  * `/echo "Line 1\nLine 2\nLine 3\nLine 4\nLine 5" | /run tail 2`
+
+* **`wc`**: Counts newlines, words, and bytes (Word Count).
+  * `/run lorem 100 | /run wc`
+  * `/echo "INFO: Ok\nERROR: Disk full\nWARN: Memory\nERROR: CPU" | /run grep "ERROR" | /run wc`
+
+
+### 📊 3. JSON, CSV, YAML & Data Structures
+
+* **`csv2json`**: Converts CSV tables into a JSON array.
+  * `/echo "id,name,role\n1,John,Admin\n2,Jane,User" | /run csv2json`
+  * `/echo "id,name,role\n1,John,Admin\n2,Jane,User\n3,Bob,Admin" | /run csvfilter 3 "Admin" | /run csv2json`
+
+* **`csvfilter`**: Filters CSV rows based on a target column value.
+  * `/echo "id,name,role\n1,John,Admin\n2,Jane,User\n3,Bob,Admin" | /run csvfilter 3 "Admin"`
+  * `/echo "id,status\n1,Active\n2,Inactive\n3,Active" | /run csvfilter 2 "Active" | /run csvstats`
+
+* **`csvselect`**: Extracts specific columns from a CSV data.
+  * `/echo "id,name,role,age\n1,John,Admin,30\n2,Jane,User,25" | /run csvselect 2,3`
+  * `/echo "1,John,Admin\n2,Jane,User" | /run csvselect 3,2,1`
+
+* **`csvsort`**: Sorts a CSV dataset based on a specific column.
+  * `/echo "name,age\nJohn,10\nBob,2\nJane,100" | /run csvsort 2`
+  * `/echo "name,score\nZack,50\nAlice,90\nBob,75" | /run csvsort 1`
+
+* **`csvstats`**: Generates a row and column summary for CSV data.
+  * `/echo "id,name,role\n1,John,Admin\n2,Jane,User" | /run csvstats`
+  * `/echo "product_id,price,stock" | /run csvstats`
+
+* **`env2json`**: Converts `.env` configuration data to JSON.
+  * `/echo "DB_HOST=localhost\nDB_URL=postgres://user:pass@host\nAPI_KEY=\"secret\"" | /run env2json`
+  * `/echo "SECRET=\"12345\"" | /run env2json`
+
+* **`jq`**: Extracts specific keys or values from a JSON object.
+  * `/get https://jsonplaceholder.typicode.com/todos/1 | /run jq "title"`
+  * `/echo "{\"status\":200,\"data\":{\"user\":\"admin\",\"token\":\"xyz\"}}" | /run jq "data.token"`
+  * `/echo "{\"password\":\"secret_pass\"}" | /run jq "password" | /run base64`
+
+* **`json2csv`**: Converts a JSON array of objects into a CSV format.
+  * `/echo "[{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}]" | /run json2csv`
+
+* **`json2yaml`**: Converts JSON objects into human-readable YAML.
+  * `/echo "{\"gitlab_ci\": {\"image\": \"rust:latest\", \"script\": [\"cargo build\", \"cargo test\"]}}" | /run json2yaml`
+
+* **`jsondiff`**: Structural comparison between two JSON objects in an array.
+  * `/echo "[{\"a\":1}, {\"a\":2}]" | /run jsondiff`
+
+* **`jsonfilter`**: Filters a JSON array based on a key-value condition.
+  * `/echo "[{\"name\": \"John\", \"role\": \"admin\"}, {\"name\": \"Jane\", \"role\": \"user\"}]" | /run jsonfilter "role" "admin"`
+
+* **`jsonfmt`**: Pretty-prints and formats minified JSON data.
+  * `/echo "{\"a\":1, \"b\": [1,2,3]}" | /run jsonfmt`
+  * `/echo "{\"name\":   \"IsoBrowse\",    \"fast\":  true}" | /run jsonfmt`
+
+* **`jsonkeys`**: Lists all top-level keys in a JSON object.
+  * `/echo "{\"name\": \"IsoBrowse\", \"version\": \"1.0\", \"fast\": true}" | /run jsonkeys`
+
+* **`jsonmerge`**: Merges an array of JSON objects into a single object.
+  * `/echo "[{\"a\":1}, {\"b\":2}]" | /run jsonmerge`
+
+* **`jsonpath`**: Deep querying tool for JSON using JSONPath syntax.
+  * `/echo "{\"users\": [{\"name\": \"Alice\", \"email\": \"alice@mail.com\"}, {\"name\": \"Eve\", \"email\": \"eve@mail.com\"}]}" | /run jsonpath "$.users[0].email"`
+  * `/echo "{\"config\": {\"database\": {\"host\": \"localhost\", \"port\": 5432}}}" | /run jsonpath "$.config.database.port"`
+
+* **`validatejson`**: Strictly checks if the input is a valid JSON string.
+  * `/echo "{\"valid\": true}" | /run validatejson`
+
+* **`yaml2json`**: Converts YAML configurations into JSON.
+  * `/echo "version: '3'\nservices:\n  web:\n    image: nginx:latest" | /run yaml2json`
+  * `/echo "services:\n  web:\n    image: isobrowse/core" | /run yaml2json | /run jq "services.web.image"`
+
+
+### 🌐 4. Web, HTML & URL Tools
+
+* **`cssminify`**: Minifies CSS by removing comments and whitespace.
+  * `/echo "body { /* Background */ background-color : red ; margin : 0 ; }" | /run cssminify`
+  * `/echo "/* Multi \n line \n comment */ .test { color: blue; }" | /run cssminify`
+
+* **`html2text`**: Strips all HTML tags, leaving only readable text.
+  * `/get https://example.com | /run html2text`
+  * `/echo "<div><h2>IsoBrowse</h2><p>Super <b>fast</b> terminal!</p></div>" | /run html2text`
+
+* **`htmlclean`**: Strips `<script>`, `<style>`, and HTML comments.
+  * `/echo "<html><head><style>body{color:red;}</style></head><body><script>alert('hack');</script><div>Clean Data</div></body></html>" | /run htmlclean`
+
+* **`htmltitle`**: Extracts the `<title>` text from an HTML document.
+  * `/get https://example.com | /run htmltitle`
+  * `/echo "<html><head><title id='main-title'>IsoBrowse Terminal v1.0</title></head></html>" | /run htmltitle`
+
+* **`linkdomain`**: Extracts only root domains from a list of URLs.
+  * `/echo "https://sub.example.com/path?user=1 \n http://192.168.1.1:8080/admin \n https://github.com/igtumt" | /run linkdomain`
+
+* **`linkextract`**: Scrapes and lists all `href` links from HTML.
+  * `/get https://news.ycombinator.com | /run linkextract`
+  * `/echo "<a href='https://isobrowse.com'>About</a> <a href='https://github.com'>GitHub</a>" | /run linkextract`
+
+
+* **`metatags`**: Extracts SEO meta tags (name and content) from HTML.
+  * `/get https://example.com | /run metatags`
+  * `/echo "<meta name='description' content='IsoBrowse Terminal'> <meta property='og:title' content='WebAssembly Pipeline'>" | /run metatags`
+
+* **`queryparam`**: Parses complex URL query parameters into a list.
+  * `/echo "http://site.com?id=5&q=test" | /run queryparam`
+  * `/echo "https://isobrowse.com/search?query=hello%20world&sort=desc&page=2" | /run queryparam`
+
+* **`tableextract`**: Converts HTML `<table>` elements into CSV data.
+  * `/echo "<table><tr><th>Name</th><th>Age</th></tr><tr><td><b>Alice</b></td><td>25</td></tr></table>" | /run tableextract`
+
+* **`urlencode`**: Safely encodes or decodes text for URLs.
+  * `/echo "hello world" | /run urlencode`
+  * `/echo "https://isobrowse.com/?q=hello world & test!" | /run urlencode`
+  * `/echo "IsoBrowse%20Terminal%20%231" | /run urlencode -d`
+
+* **`urlparse`**: Breaks down a URL into its scheme, host, port, and path.
+  * `/echo "https://isobrowse.com:443/api/v1/users?id=5&lang=en#profile-section" | /run urlparse`
+
+
+### 📝 5. Markdown Processing
+
+* **`md_links`**: Extracts all `[Text](URL)` links from Markdown.
+  * `/echo "# Hello \n Check our [GitHub Repo](https://github.com/igtumt/isomodules) and [Website](https://isobrowse.com)." | /run md_links`
+
+* **`md_strip`**: Removes Markdown formatting to extract raw text.
+  * `/echo "# Title \n This is **bold** and _italic_. \n - List 1 \n > Quote \n [Link](https://isobrowse.com)" | /run md_strip`
+
+* **`md_toc`**: Generates a Table of Contents from Markdown `# Headers`.
+  * `/echo "# Project \n Intro... \n ## Features \n ### Terminal \n ### UI \n ## Install" | /run md_toc`
+
+* **`md2html`**: Converts standard Markdown text into HTML.
+  * `/echo "# IsoBrowse \n This is **great**. \n - Fast \n - Secure \n [Go](https://isobrowse.com)" | /run md2html`
+
+
+### 🔐 6. Security, Hashing & Encoding
+
+* **`base58`**: Encodes/decodes data using Base58.
+  * `/echo "isobrowse_secret_key" | /run base58`
+  * `/echo "2UD5hpwTiBWxdazriXAjGMkz1Cuv" | /run base58 -d`
+
+* **`base64`**: Encodes/decodes data using Base64 format.
+  * `/echo "hello world" | /run base64`
+  * `/echo "SXNvQnJvd3NlIFRlcm1pbmFs" | /run base64 -d`
+
+* **`bcrypt`**: Hashes passwords using the bcrypt algorithm.
+  * `/echo "mypassword" | /run bcrypt`
+
+* **`hex`**: Encodes/decodes text to hexadecimal format.
+  * `/echo "data" | /run hex`
+  * `/echo "49736f42726f777365205465726d696e616c" | /run hex -d`
+
+* **`jwt`**: Decodes JSON Web Tokens (JWT) into readable JSON payloads.
+  * `/echo "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjJ9" | /run jwt`
+  * `/echo "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjJ9" | /run jwt | /run jsonpath "$.payload"`
+
+* **`md5`**: Generates an MD5 hash of the input text.
+  * `/echo "isobrowse" | /run md5`
+
+* **`random`**: Generates a secure random string.
+  * `/run random`
+  * `/run random 32`
+
+* **`sha256`**: Generates a secure SHA-256 hash of the input text.
+  * `/echo "isobrowse" | /run sha256`
+
+* **`uuid`**: Generates a universally unique identifier (UUID v4).
+  * `/run uuid`
+  * `/run uuid 5`
+
+
+### 🛠 7. Math, Analytics & Developer Debug
+
+* **`avg`**: Calculates the average of a list of numbers.
+  * `/echo "10 20 30" | /run avg`
+  * `/echo "Server1: 15.5 ms, Server2: 20.5 ms, Error: timeout" | /run avg`
+
+* **`bytecount`**: Counts the exact byte size of the data payload.
+  * `/echo "IsoBrowse" | /run bytecount`
+  * `/echo "🚀" | /run bytecount`
+
+* **`entropy`**: Calculates Shannon Entropy to detect data complexity.
+  * `/echo "AAAAAAAAAAAAAA" | /run entropy`
+  * `/run random 1000 | /run entropy`
+
+* **`hexdump`**: Displays raw data byte-by-byte with memory offsets.
+  * `/echo "IsoBrowse Terminal V1" | /run hexdump`
+  * `/echo "Hello 🚀\nTest" | /run hexdump`
+
+* **`histogram`**: Visualizes data distribution using ASCII bar charts.
+  * `/echo "Success 120 \nFailed 15 \nPending 45 \nCanceled 5" | /run histogram`
+
+* **`lorem`**: Generates placeholder "Lorem Ipsum" text.
+  * `/run lorem 30`
+  * `/run lorem 100 | /run wordwrap 50`
+
+* **`math`**: Evaluates mathematical expressions.
+  * `/echo "5 * (10 + 2)" | /run math`
+  * `/echo "sin(pi / 2) * 100" | /run math`
+
+* **`minmax`**: Finds the minimum and maximum values in a number list.
+  * `/echo "5 100 2" | /run minmax`
+  * `/echo "Ping delays: 45.5 ms, 12.2 ms, dropped, 105.8 ms" | /run minmax`
+
+* **`stats`**: Generates basic statistics (sum, mean, median) from numbers.
+  * `/echo "100 5 25 50 10" | /run stats`
+  * `/echo "CPU: 85.5 % RAM: 40 % Disk: 10.2 %" | /run stats`
+
+* **`timestamp`**: Outputs the current UNIX epoch timestamp.
+  * `/run timestamp`
+  * `/echo "1711223450" | /run timestamp`
