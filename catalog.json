@@ -306,12 +306,6 @@
     "tags": "text lines numbering format"
   },
   {
-    "name": "patch",
-    "category": "TEXT",
-    "desc": "Applies a diff file to an original text.",
-    "tags": "text diff apply update"
-  },
-  {
     "name": "php-slim",
     "category": "ENGINE",
     "desc": "Official PHP WebAssembly runtime (Slim version).",
